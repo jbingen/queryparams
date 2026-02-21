@@ -46,7 +46,7 @@ usersQuery.build({ page: 3, tags: ["x"] });
 
 Every app parses query strings. Almost none of them do it consistently. You end up with `Number()` casts, `?? ""` fallbacks, and `getAll()` calls copy-pasted across handlers with no shared type.
 
-queryparams fixes this in ~120 lines with zero dependencies. Define the shape once - get parsing, serialization, defaults, and full type inference for free.
+queryparams fixes this with zero dependencies. Define the shape once - get parsing, serialization, defaults, and full type inference for free.
 
 ## API
 
@@ -133,7 +133,7 @@ number().default(1)  // number, defaults to 1
 
 ## Design decisions
 
-- Zero dependencies. ~120 lines of TypeScript.
+- Zero dependencies. Tiny footprint.
 - Coercers are plain functions, not a schema DSL. No `.min()`, `.max()`, `.regex()` - use Zod for that.
 - `parse` accepts both strings and `URLSearchParams` so it works in any environment.
 - `build` returns the `?` prefix so you can concatenate directly with a path.
